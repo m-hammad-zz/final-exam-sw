@@ -9,4 +9,7 @@ class Sale < ActiveRecord::Base
     return sale
   end
 
+  def self.total_sales
+
+  end
 end

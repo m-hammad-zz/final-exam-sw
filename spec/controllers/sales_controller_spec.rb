@@ -168,4 +168,11 @@ RSpec.describe SalesController, :type => :controller do
     end
   end
 
+  describe "total sales" do
+    it "can compute total sales" do
+      # get :total_sales, {good: "Galaxy S5"}
+      # assigns(:sales).should_receive(Sale.total_sales)
+      # expect(response).to eq
+    end
+  end
 end
