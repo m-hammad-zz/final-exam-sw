@@ -4,7 +4,7 @@ class SalesController < ApplicationController
   def index
     # @sales = Sale.all
     @sales = Sale.filter_by_city(params[:cities])
-    @all_cities = ['Alex', 'Cairo', 'Mansoura', 'Aswan']
+    @cities = ['Alex', 'Cairo', 'Mansoura', 'Aswan']
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @sales }
