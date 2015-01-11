@@ -3,8 +3,12 @@ class SalesController < ApplicationController
   # GET /sales.json
   def index
     # @sales = Sale.all
-    @sales = Sale.filter_by_city(params[:cities])
     @cities = ['Alex', 'Cairo', 'Mansoura', 'Aswan']
+    local_cities = []
+    (params[:cities].eql? nil) ? local_cities = @cities : local_cities = params[:cities]
+
+    @sales = Sale.filter_by_city(local_cities)
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @sales }
